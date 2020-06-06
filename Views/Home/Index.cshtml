@@ -1,0 +1,51 @@
+@model Person
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css"/>
+    <title>Form Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Enter your personal information for no reason! </h1>
+        <hr>
+        <form asp-action="FormSubmit" asp-controller="Home" method="POST" class="form">
+
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName">
+            <br>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName">
+            <br>
+            <label asp-for="Age"></label>
+            <input asp-for="Age">
+            <br>
+            <label asp-for="Email"></label>
+            <input asp-for="Email">
+            <br>
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type='password'>
+            <br>
+            <button type="submit" class="btn btn-dark btn-md">Submit</button>
+            <br>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <br>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+            <br>
+            <span asp-validation-for="Age" class="text-danger"></span>
+            <br>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <br>
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>
